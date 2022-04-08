@@ -1,5 +1,5 @@
-@import "../../../colors.scss";
- @import '../../../styles.scss';
+// @import "../../../colors.scss";
+  // @import '../../../styles.scss';
 
  @import '~@angular/material/theming';
 
@@ -128,7 +128,37 @@
   //   // color: $blue-l;
   // }
 
-.fab{
-  font-size: 3rem;
-  margin: 0 .5rem 0 .5rem;  
-}
+
+@import '~@angular/material/theming';
+
+@mixin nav-socials-theme($theme) {
+    $icon-theme: map-get($theme, primary,darker);
+    //background: map-get($theme, background);
+    //$background-color: mat-color($background, card);
+    .fab{
+       color: $icon-theme;
+       font-size: 3rem;
+       margin: 0 .5rem 0 .5rem;  
+    }
+  }
+    
+    // .tile {
+    //     @include mat-elevation(2);
+    //     background-color: mat-color($accent);
+    //     border: 1rem solid $background-color;
+    //     padding: 2rem;
+    //     min-height: 200px;
+    //     min-width: 200px;
+        
+    //     p {
+    //         color: $background-color;
+    //         font-family: 'Pacifico';
+    //         line-height: 2.4rem;
+    //         font-size: 2rem;
+    //     }
+    // }
+
+
+// .fab{
+
+// }

@@ -3,10 +3,12 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class ThemeService {
-  private _darkTheme: Subject<boolean> = new Subject<boolean>();
-  isDarkTheme = this._darkTheme.asObservable();
+  private _themeSetting: Subject<string> = new Subject<string>();
+  themeSetting = this._themeSetting.asObservable();
 
-  setDarkTheme(isDarkTheme: boolean) {
-    this._darkTheme.next(isDarkTheme);
+  setTheme(themeSetting: string) {
+    // console.log("new theme",themeSetting)
+    this._themeSetting.next(themeSetting);
   }
+  
 }

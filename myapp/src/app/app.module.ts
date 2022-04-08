@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { FaLibModule } from './fa-lib/fa-lib.module';
 import { NavSocialsComponent } from './navbar/nav-socials/nav-socials.component';
+import { ThemeService } from './core/services/theme.service';
+import { ThemeChooserComponent } from './theme-chooser/theme-chooser.component';
 
 
 
@@ -30,8 +32,7 @@ import { NavSocialsComponent } from './navbar/nav-socials/nav-socials.component'
     MainComponent,
     NavbarComponent,
     NavSocialsComponent,
-    
-    
+    ThemeChooserComponent,   
     
   ],
   imports: [
@@ -45,7 +46,7 @@ import { NavSocialsComponent } from './navbar/nav-socials/nav-socials.component'
     
     
   ],
-  providers: [CookieService],
+  providers: [CookieService, ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

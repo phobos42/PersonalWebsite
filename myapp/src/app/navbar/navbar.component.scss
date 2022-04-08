@@ -1,4 +1,4 @@
- @import "../../colors.scss";
+@use '@angular/material' as mat;
 section {
     display: table;
     
@@ -46,3 +46,27 @@ section {
   font-size: 3rem;
 }
 
+@import '~@angular/material/theming';
+
+@mixin nav-theme($theme) {
+  $icon-color: map-get($theme, primary,darker);
+  $menu-bg: map-get($theme, background, dialog);
+    // $accent: map-get($theme, accent,main);
+    //background: map-get($theme, background);
+    //$background-color: mat-color($background, card);
+    
+// @include angular-material-theme($theme)
+    .fas{
+      color: $icon-color;    
+    }
+    // .mat-menu-content{
+    //   background:$red;
+    // }
+
+    
+
+  }
+
+
+
+    

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MaterialModule } from '../material/material.module';
+import { Observable } from 'rxjs';
+import { ThemeService } from '../core/services/theme.service';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -7,22 +9,21 @@ import { MaterialModule } from '../material/material.module';
 })
 export class MainComponent implements OnInit {
 
-  DarkModeParent: boolean;
-  ThemeStyleSetting: any;
-  constructor() { this.DarkModeParent = false}
-
   
-  OnThemeChange(dark: boolean){
-    if(dark){
-      this.ThemeStyleSetting='';      
-    }else{
-      this.ThemeStyleSetting='theme-alternate'
-    }
-    
+  ThemeStyleSetting: Observable<string>;
+  themeClass: string;
+
+  constructor(private themeService: ThemeService){    
+    this.ThemeStyleSetting=themeService.themeSetting;
+    this.themeClass=''
   }
 
-  ngOnInit(): void {
-    //this.OnThemeChange(this.DarkModeParent);
+  ngOnInit(): void {    
+    this.themeService.themeSetting.subscribe(data => {
+      this.themeClass = data;      
+    })
   }
+
+ 
 
 }
