@@ -1,0 +1,48 @@
+
+<mat-toolbar>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4 leftnav d-flex align-items-center justify-content-start">
+        <a routerLink="" class="fas fa-home" style="font-size: 2rem;
+        margin: 0 .5rem 0 .5rem;"></a>
+      </div>
+      <div class="col-4 d-flex align-items-center justify-content-center">
+        <button mat-button color="icons">
+          <a href="https://github.com/phobos42" class="shit fab fa-github"></a>
+        </button>
+        <button mat-button color="icons">
+          <a href="https://www.linkedin.com/in/garrettruffner/" class="fab fa-linkedin"></a>
+        </button>  
+      </div>
+      <div class="col-4 d-flex align-items-center justify-content-end">        
+          <button mat-button color="icons" [matMenuTriggerFor]="menu">
+           <a class="fas fa-bars menu-bars"></a>
+          </button> 
+          <mat-menu #menu="matMenu" class="mat-app-background" [ngClass]="themeClass">
+            <button mat-menu-item routerLink="/resume">             
+              <a >Resume Page</a>
+            </button>
+            <!-- <button mat-menu-item>
+              <a>link2</a>             
+            </button> -->
+            <button mat-menu-item> 
+              <app-theme-chooser></app-theme-chooser>
+            </button>   
+          </mat-menu>
+       
+      </div>
+    </div>
+  </div>
+  
+</mat-toolbar>
+<!-- <div class="example-label">Flat</div>
+    <div class="example-button-row">
+      <button mat-flat-button>Basic</button>
+      <button mat-flat-button color="primary">Primary</button>
+      <button mat-flat-button color="accent">Accent</button>
+      <button mat-flat-button color="warn">Warn</button>
+      <button mat-flat-button disabled>Disabled</button>
+      <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+      <mat-slide-toggle [(ngModel)]="DarkMode" (change)="DarkModeToggle()">DarkMode</mat-slide-toggle>
+     
+    </div> -->
