@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "http://garrettruffner.com",
+      "target": "http://s3.garrettruffner.com",
       "secure": false,
       "pathRewrite": {
         "^/api": ""
