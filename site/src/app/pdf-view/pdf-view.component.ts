@@ -10,11 +10,10 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class PdfViewComponent implements OnInit {
   pdfSrc = "/api/Garrett_Ruffner_Resume.pdf";  
-  bloburl: SafeResourceUrl;
+  //bloburl: SafeResourceUrl;
   badurl: string = '';
- 
   constructor(private http: HttpClient,private sanitizer: DomSanitizer) {
-    this.bloburl = this.sanitizer.bypassSecurityTrustResourceUrl("")
+    //this.bloburl = this.sanitizer.bypassSecurityTrustResourceUrl("")
    }
 
   ngOnInit(): void {
@@ -25,18 +24,18 @@ export class PdfViewComponent implements OnInit {
 
   getPDF(){
     // this.openSnackBar("Fetching PDF...","");
-    const headers = new HttpHeaders({ 'Content-type': 'binary/octet-stream',
-    responseType : 'blob',
-    Accept : 'application/pdf',
-    observe : 'response' });
+    const headers = new HttpHeaders({ 
+      'Content-type': 'binary/octet-stream',
+      responseType : 'blob',
+      Accept : 'application/pdf',
+      observe : 'response',
+      'Access-Control-Allow-Origin' : '*'
+    });
 
     this.http.get(this.pdfSrc, {headers:headers , responseType:'blob'}).subscribe(data => {     
       var file = new Blob([data], {type: 'application/pdf'});      
       this.badurl = URL.createObjectURL(file);
-      this.bloburl = this.sanitizer.bypassSecurityTrustResourceUrl(this.badurl);      
+      //this.bloburl = this.sanitizer.bypassSecurityTrustResourceUrl(this.badurl);      
     });
-    
-   
-    
   }
 }

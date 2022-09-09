@@ -1,1 +1,9 @@
-<embed [src]="bloburl" type="application/pdf" class="embeded-page" >
+<!-- <embed [src]="bloburl" type="application/pdf" class="embeded-page" > -->
+ <pdf-viewer [src]="badurl"
+    [render-text]="true"
+    [original-size]="false"
+    class="embeded-page"
+    [show-borders]="true"
+    [autoresize]="true"
+    [zoom]="0.5"
+></pdf-viewer>

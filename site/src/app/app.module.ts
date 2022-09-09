@@ -16,7 +16,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { HttpClientModule} from '@angular/common/http';
 import { ResumePageComponent } from './pages/resume-page/resume-page.component';
 import { PdfViewComponent } from './pdf-view/pdf-view.component';
-
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 
@@ -41,6 +41,7 @@ import { PdfViewComponent } from './pdf-view/pdf-view.component';
     FormsModule,
     NgxExtendedPdfViewerModule,
     HttpClientModule,
+    PdfViewerModule,
   
   
     

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personalweb
+  labels:
+    app: personalweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: personalweb
+  template:
+    metadata:
+      labels:
+        app: personalweb
+    spec:
+      containers:
+      - name: personalweb
+        image: phobos42/personalweb:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
